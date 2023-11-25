@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import logo from './logo.svg';
-import './App.css';
-import Home from './com/home';
-
+import "./App.css";
+import Home from "./com/home";
 
 function App() {
   return (

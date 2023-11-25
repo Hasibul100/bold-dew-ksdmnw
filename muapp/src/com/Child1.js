@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Child2 from "./Child2";
 import ChildA from "./ChildA";
 
 export default function Child1(props) {
-  const [data, setdata] = useState("Welcome to Hasibbya ChildA");
-
-  const pChild = () => {
-    setdata({data});
+  const pChild = (a) => {
+    console.log(a);
   };
 
   return (

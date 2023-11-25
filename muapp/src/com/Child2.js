@@ -2,17 +2,16 @@ import React from "react";
 import Child3 from "./Child3";
 
 export default function Child2(props) {
-  const { pData, txt } = props;
+  const avc = "Hello world";
+  props.pData(avc);
 
   return (
     <>
       <h1>
         Hello Child2
         <br />
-        {txt}
-        {pData}
       </h1>
-      <Child3 txt={"I am Child2 and " + txt} />
+      <Child3 txt="I am Child 2 are you ok" />
     </>
   );
 }
