@@ -1,4 +1,5 @@
 import React from "react";
+import FormikForm from "../Form/FormikForm";
 
 ////import Sign_In_page from "../Form/Sign_In_page";
 // //import Sign_Up_page from "../Form/Sign_Up_page";
@@ -19,9 +20,11 @@ export default function Home() {
   // };//
   return (
     <>
+      <FormikForm />
+
       {/* {isLog ? <Sign_In_page /> :}
       {console.log(FormData)} */}
-      <Card />
+      {/* <Card /> */}
       {/* <ChildA />
 
       <h1>Hello</h1>
