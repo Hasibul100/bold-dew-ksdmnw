@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from 'react'
 
-export default function ChildA(props) {
-  
-
+function FAQs(title,desc) {
+  const {btn,setbtn}=useState(false)
   return (
     <>
-      <h1>Hello ChildA</h1>
+    <div>
+      <h3>{title}</h3>
+      <button onClick={()=>{
+        setbtn(! btn )
+      }}>{btn?"-":"+"}</button>
+      <p>{btn && desc }</p>
+    </div>
     </>
-  );
+  )
 }
+
+export default FAQs

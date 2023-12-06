@@ -5,7 +5,8 @@ import React from "react";
 // import Child1 from "./Child1";
 // import ChildA from "./ChildA";
 //import FormData from "../User&Pass/Data";
-import Card from "./Card";
+//import Card from "./Card";
+import FormikForm from "../Form/FormikForm";
 
 export default function Home() {
   // const [formData, setFormData] = useState([""]);
@@ -19,9 +20,11 @@ export default function Home() {
   // };//
   return (
     <>
+
+    <FormikForm />
       {/* {isLog ? <Sign_In_page /> :}
       {console.log(FormData)} */}
-      <Card />
+      {/* <Card /> */}
       {/* <ChildA />
 
       <h1>Hello</h1>
