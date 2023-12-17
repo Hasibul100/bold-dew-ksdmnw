@@ -1,69 +1,81 @@
-import React,{useState,useReducer} from 'react'
-import'./App.css'
-const name=[
-{id:1,name:"hsibul"},
-{id:2,name:'mijan'},
-{id:3,name:'mahdi'}
-]
-const reducer=(reducerState,action)=>{
-  switch (action.type) {
-    case "addname":
-      return{...reducerState,data:[...reducerState.data,action.payload]};
-      case "rem":
-        return{...reducerState,data:action.payload}
-      default:
-        return reducerState;
-  }
 
-}
+import React from 'react'
+import Com1 from './com1'
 
-function App() {
-
-  const [state,dispatch]=useReducer(reducer,{
-    data: name,
-
-  })
-
-
-  const [indata,setindata]=useState('');
-  const hndlsbmt=(e)=>{
-    e.preventDefault();
-    const newName = indata.trim();
-    const nameexits= state.data.some((itm)=>itm.name===newName);
-    if(nameexits){
-      alert('this name is also added')
-    } else{ const val = {id:Date().toString(),name:indata}
-    dispatch({type:"addname",payload:val})
-    setindata('')
- }
-
-  }
-  const rem=(id)=>{
-    const remm = state.data.filter((itm)=>(itm.id!== id))
-    dispatch({type:"rem", payload:remm})
-  }
-
+export default function App() {
   return (
     <div>
-      <h1>Hello</h1>
-     
-      <form onSubmit={hndlsbmt} >
-        <input required
-        value={indata}
-        onChange={(e)=>{
-          setindata(e.target.value)
-        }}
-        />
-        <button type='submit'>Add</button>
-      </form>
-       {state.data.map((itm,key)=>(
-        <div key={key}><h3>{itm.name}</h3><button onClick={()=>{rem(itm.id)}} >remove</button></div>
-      ))}
+      <Com1 />
     </div>
   )
 }
 
-export default App
+// import React,{useState,useReducer} from 'react'
+// import'./App.css'
+// const name=[
+// {id:1,name:"hsibul"},
+// {id:2,name:'mijan'},
+// {id:3,name:'mahdi'}
+// ]
+// const reducer=(reducerState,action)=>{
+//   switch (action.type) {
+//     case "addname":
+//       return{...reducerState,data:[...reducerState.data,action.payload]};
+//       case "rem":
+//         return{...reducerState,data:action.payload}
+//       default:
+//         return reducerState;
+//   }
+
+// }
+
+// function App() {
+
+//   const [state,dispatch]=useReducer(reducer,{
+//     data: name,
+
+//   })
+
+
+//   const [indata,setindata]=useState('');
+//   const hndlsbmt=(e)=>{
+//     e.preventDefault();
+//     const newName = indata.trim();
+//     const nameexits= state.data.some((itm)=>itm.name===newName);
+//     if(nameexits){
+//       alert('this name is also added')
+//     } else{ const val = {id:Date().toString(),name:indata}
+//     dispatch({type:"addname",payload:val})
+//     setindata('')
+//  }
+
+//   }
+//   const rem=(id)=>{
+//     const remm = state.data.filter((itm)=>(itm.id!== id))
+//     dispatch({type:"rem", payload:remm})
+//   }
+
+//   return (
+//     <div>
+//       <h1>Hello</h1>
+     
+//       <form onSubmit={hndlsbmt} >
+//         <input required
+//         value={indata}
+//         onChange={(e)=>{
+//           setindata(e.target.value)
+//         }}
+//         />
+//         <button type='submit'>Add</button>
+//       </form>
+//        {state.data.map((itm,key)=>(
+//         <div key={key}><h3>{itm.name}</h3><button onClick={()=>{rem(itm.id)}} >remove</button></div>
+//       ))}
+//     </div>
+//   )
+// }
+
+// export default App
 
 
 
