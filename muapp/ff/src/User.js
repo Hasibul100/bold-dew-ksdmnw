@@ -1,16 +1,18 @@
-import React from 'react'
 
-function User({user,id,itmremove}) {
-  const itmremov=(id)=>{
-    itmremove(id)
-  }
+import {useCstmCntxt} from './hook'
+
+function User() {
+ const {name,setname}= useCstmCntxt();
+ const itmremov=(id)=>{
+  setname(name.filter((itm)=>itm.id !== id ))
+ }
   return (
     <>
-    <article>
-     <h2>{user}</h2>
-     <p>{id}</p>
-     <button onClick={()=>{itmremov(id)}}>remove</button>
-    </article>
+    {name.map((itm,key)=><article>
+     <h2>{itm.name}</h2>
+     <p>{itm.id}</p>
+     <button onClick={()=>{itmremov(itm.id)}}>remove</button>
+    </article>)}
     </>
   )
 }

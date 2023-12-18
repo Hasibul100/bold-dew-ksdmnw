@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
+import { useCstmCntxt } from './hook'
 
 function Newuser({newdata}) {
+  const{name,setname} = useCstmCntxt();
 
     const [newuser,setnewuser]= useState('')
     const handelchange=(e)=>{
@@ -8,7 +10,7 @@ function Newuser({newdata}) {
     }
     const hndlsbmt=(e)=>{
         e.preventDefault()
-        newdata(newuser)
+        setname([...name,{id:new Date().getTime().toString(),name:newuser}])
         setnewuser('')
     }
   return (
