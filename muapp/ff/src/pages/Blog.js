@@ -10,7 +10,14 @@ function Blog() {
         settData(bodyData[0].body)
     },[title])
   return (
-    <div>{tData}</div>
+    <div>
+        <h2>{title}</h2>
+<p>{tData.slice(0,200)}</p>
+<p>{tData.slice(201,400)}</p>
+<p>{tData.slice(401,600)}</p>
+<p>{tData.slice(601,800)}</p>
+
+        </div>
   )
 }
 
